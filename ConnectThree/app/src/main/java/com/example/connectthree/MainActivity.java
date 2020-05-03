@@ -18,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
     int[][] winningPositions = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
     boolean isGameActive = true;
 
+
+    public void displayWinner(String winner) {
+        Button playAgain = (Button) findViewById(R.id.playAgainButton);
+        TextView winnerText = (TextView) findViewById(R.id.winnerTextView);
+        playAgain.setVisibility(View.VISIBLE);
+        winnerText.setVisibility(View.VISIBLE);
+        winnerText.setText(winner);
+    }
+
     public void playAgain(View view) {
         Button playAgain = (Button) findViewById(R.id.playAgainButton);
         TextView winnerText = (TextView) findViewById(R.id.winnerTextView);
@@ -54,24 +63,37 @@ public class MainActivity extends AppCompatActivity {
             counter.setTranslationY(-1500);
             counter.animate().translationYBy(1500).rotation(3600).setDuration(300);
 
+            String winner = ""; //The winner variable
+            //Checking for the winner
             for (int[] winningPosition : winningPositions) {
                 if (gameState[winningPosition[0]] == gameState[winningPosition[1]] && gameState[winningPosition[0]] == gameState[winningPosition[2]] && gameState[winningPosition[0]] != 2) {
                     //Someone has won!!!
-                    String winner = "";
                     if (activePlayer == 1) {
                         //since the active player has been changed during the above process so here if activePlayer is 1 yellow has won and if the activePlayer is 0 Red has won
-                        winner = "Yellow Player";
+                        winner = "Yellow Player has won!!!!!";
                     } else if (activePlayer == 0) {
                         //since the active player has been changed during the above process so here if activePlayer is 1 yellow has won and if the activePlayer is 0 Red has won
-                        winner = "Red Player";
+                        winner = "Red Player has won!!!!!";
                     }
                     isGameActive = false;
-                    Button playAgain = (Button) findViewById(R.id.playAgainButton);
-                    TextView winnerText = (TextView) findViewById(R.id.winnerTextView);
-                    playAgain.setVisibility(View.VISIBLE);
-                    winnerText.setVisibility(View.VISIBLE);
-                    winnerText.setText(winner + " has won!!!!");
+                    displayWinner(winner);
                 }
+            }
+            boolean isDraw = false;
+            //Checking is the match is draw
+            if (isGameActive) {
+                isDraw = true;
+                for (int i = 0; i < gameState.length; i++) {
+                    if (gameState[i] == 2) {
+                        isDraw = false;
+                        break;
+                    }
+                }
+            }
+            if(isDraw == true) {
+                isGameActive = false;
+                winner = "The match is a Draw!!";
+                displayWinner(winner);
             }
         }
     }
