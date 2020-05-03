@@ -4,13 +4,17 @@ The Yellow token starts first and then you have to connect three tokens either V
 
 Image Preview
 **The Game Board**
-<img src ="images/the%20game%20board">
+
+<img src ="images/the game board.png" height='500' >
 
 **Yellow Won**
-<img src ="images/yellow won">
+
+<img src ="images/yellow won.png" height = 500>
 
 **Red Won**
-<img src ="images/red won">
+
+<img src ="images/red won.png" height = 500>
 
 **Draw Match**
-<img src ="images/draw match">
+
+<img src ="images/draw match.png" height = 500>
