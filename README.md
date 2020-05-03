@@ -4,7 +4,7 @@ The Yellow token starts first and then you have to connect three tokens either V
 
 Image Preview
 **The Game Board**
-<img src ="images/the game board">
+<img src ="images/the%20game%20board">
 
 **Yellow Won**
 <img src ="images/yellow won">
