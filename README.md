@@ -3,3 +3,14 @@ The Yellow token starts first and then you have to connect three tokens either V
 
 
 Image Preview
+**The Game Board**
+<img src ="images/the game board">
+
+**Yellow Won**
+<img src ="images/yellow won">
+
+**Red Won**
+<img src ="images/red won">
+
+**Draw Match**
+<img src ="images/draw match">
